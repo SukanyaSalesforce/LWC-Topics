@@ -1,0 +1,49 @@
+<template>
+    <lightning-card  title="For looping">
+        <div class="slds-m-around_small">
+            <template for:each={emps} for:item="emp" for:index="ind">
+                <ul class="slds-has-dividers_around-space" key={emp}>
+                    <li class="slds-item">{emp}</li>
+                    </ul>
+                    </template>
+                    </div>
+            
+            </lightning-card>
+            <lightning-card  title="Iterator looping">
+                <div class="slds-m-around_small">
+                   <template iterator:ceo={ceoList}>
+                       <div key={ceo.value.id}>
+                           <template if:true={ceo.first}>
+                              <div class="slds-box slds-box_small"> 
+                               List of 5 top companies
+                               </div>
+                            </template>  
+                    <ul class="slds-has-dividers_around-space" >
+                        <li class="slds-item"><strong>{ceo.value.company} </strong>{ceo.value.name}</li>
+                        
+                        </ul>
+                        <template if:true={ceo.last}>
+                            <div class="slds-box slds-box_small">
+                              Thanks for reading 
+                                </div>
+                           </template>
+                        </div>
+                        </template>
+                   
+
+                 </div>
+
+                 </lightning-card>
+                 <lightning-card  title="for looping for array of object">
+                    <div class="slds-m-around_small">
+                        <template for:each={ceoList} for:item="list">
+                            <ul class="slds-has-dividers_around-space" key={list.id} >
+                                <li class="slds-item">
+                                    <strong>{list.company} </strong> {list.name}
+                                    </li>
+                                    </ul> 
+                        </template>
+                        </div>
+                        </lightning-card> 
+            
+</template>
