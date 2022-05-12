@@ -75,4 +75,5 @@ export default class HelloWorld extends LightningElement {
         }
         return this.num1/this.num2 
     }
+    
 }
