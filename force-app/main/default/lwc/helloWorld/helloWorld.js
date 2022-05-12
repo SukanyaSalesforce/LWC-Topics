@@ -1,6 +1,7 @@
 import { LightningElement, track} from 'lwc';
 
 export default class HelloWorld extends LightningElement {
+    isCalculated=false
    Gender//undefined
    name='sukku'
     age=23//number
@@ -56,6 +57,7 @@ export default class HelloWorld extends LightningElement {
     {
         this.labelName=event.target.label
         this.result=this.Calcul
+        this.isCalculated=true
     }
     get Calcul()
     {
