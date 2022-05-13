@@ -1,0 +1,11 @@
+<apex:page controller="Custom_Example">
+   <!-- <c:CapitalVFComponent empName="Ammu" bgcolor="brown" color="red"></c:CapitalVFComponent>
+    <c:CapitalVFComponent empName="Baby" bgcolor="blue" color="yellow"></c:CapitalVFComponent>
+    <c:CapitalVFComponent empName="Rani" bgcolor="red" color="blue"></c:CapitalVFComponent>-->
+    <apex:form >
+    <c:CustomComponent records="{!accounts}" fields="{!afields}"/>
+    </apex:form>
+    <apex:form >
+        <c:CustomComponent records="{!contacts}" fields="{!cfields}"/>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Shadow Dom</title>
+        <style>
+            p{
+                color: aqua;
+            }
+        </style>
+    </head>
+    <body>
+        <p>I am p tag</p>
+        <div id="host"></div>
+        <button onclick="handleQuery()">Click</button>
+    </body>
+    <script>
+        const elm=document.querySelector("#host")
+        const shadowRoot=elm.attachShadow({mode:'open'})
+        shadowRoot.innerHTML="<p>I am shadow<p>"
+            function handleQuery()
+            {
+                const query=document.querySelectorAll('p');
+                Array.from(query).forEach(item=>console.log(item.innerText))
+            }
+    </script>
+
+</html>

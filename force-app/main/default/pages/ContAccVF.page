@@ -1,0 +1,29 @@
+<apex:page controller="ContAccController">
+    <apex:form >
+      <apex:pageBlock title="Account-Contact" id="pb">
+          <apex:pageBlockButtons location="top">
+                     <apex:commandButton value="add" action="{!addElm}" reRender="pb"/>
+          </apex:pageBlockButtons>
+         <apex:pageBlockSection title="Account">
+                 <apex:inputText value="{!ac.acc.Name}"/>
+                 <apex:inputText value="{!ac.acc.AnnualRevenue}"/>
+                 <apex:inputText value="{!ac.acc.Phone}"/>
+                 <apex:inputText value="{!ac.acc.Rating}"/>
+          </apex:pageBlockSection>
+          <apex:pageBlockSection title="Contact">
+              <apex:inputText value="{!ac.con.FirstName}"/>
+              <apex:inputText value="{!ac.con.LastName}"/>
+          </apex:pageBlockSection>
+        <apex:pageBlockSection columns="1" rendered="{!accounts.size>0}">
+            <apex:pageBlockTable value="{!accounts}" var="a">
+                <apex:column value="{!a.acc.Name}"/>
+                <apex:column value="{!a.acc.AnnualRevenue}"/>
+                <apex:column value="{!a.acc.Phone}"/>
+                <apex:column value="{!a.acc.Rating}"/>
+                <apex:column value="{!a.con.FirstName}"/>
+                <apex:column value="{!a.con.LastName}"/>
+            </apex:pageBlockTable>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>
