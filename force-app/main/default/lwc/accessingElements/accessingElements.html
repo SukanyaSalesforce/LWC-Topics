@@ -1,0 +1,12 @@
+<template>
+    <lightning-card title="Accessing element from HTML using Query Selector">
+     <div class="slds-m-around_small">
+         <h1>I am heading tag</h1>
+         <template for:each={names} for:item="n">
+             <div class="names" key={n}>{n}</div>
+         </template>
+         <div class="msg" lwc:dom="manual"></div>
+         <button onclick={handleClick}>Click</button>
+     </div>
+    </lightning-card>
+</template>
